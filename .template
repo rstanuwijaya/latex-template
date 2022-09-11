@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage{../acad}
 
+\renewcommand{\sectionPrefix}{Problem }
+
 \title{TITLE_PLACEHOLDER}
 \author{TANUWIJAYA, Randy Stefan \\ (20582731) \\ rstanuwijaya@connect.ust.hk}
 \affil{Department of Physics - HKUST}

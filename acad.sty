@@ -76,7 +76,6 @@
 \newcommand{\pbracket}[1]{\left(#1\right)}
 \newcommand{\cbracket}[1]{\left\{#1\right\}}
 \newcommand{\kbracket}[1]{\left<#1\right>}
-\newcommand{\sectionPrefix}{Problem }
 
 \newcommand{\qed}{\quad \text{(Q.E.D)}}
 
@@ -85,16 +84,26 @@
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
+\newcommand{\sectionPrefix}{Problem }
 
 \makeatletter
-\renewcommand	\section{\@startsection 
-							{section}
-							{1}
-							{\z@}
-							{-3.5ex \@plus -1ex \@minus -.2ex}%
-							{1ex}
-							{\normalfont\Large\bfseries \sectionPrefix\thesection. }
-						}
+	\newcommand{\section@base}[1]{
+		\@startsection{section}
+		{1}
+		{\z@}
+		{-3.5ex \@plus -1ex \@minus -.2ex}%
+		{1ex}
+		{#1}
+	}
+	\newcommand{\section@unstarred}[1]{
+		\section@base{\normalfont\Large\bfseries \sectionPrefix\thesection. }{#1}
+	}
+	\newcommand{\section@starred}[1]{
+		\section@base{\normalfont\Large\bfseries \thesection. }{#1}
+	}
+	\renewcommand{\section}{
+		\@ifstar{\section@starred}\section@unstarred
+	}
 \makeatother
 
 \usepackage[shortlabels]{enumitem}
