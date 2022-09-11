@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{../acad}
+\usepackage{../acad} % https://github.com/rstanuwijaya/latex-template
 
 \renewcommand{\sectionPrefix}{Problem }
 
