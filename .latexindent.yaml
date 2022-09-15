@@ -1,2 +1,5 @@
+defaultIndent: "\t"
+
 indentRules:
-  section: \t
+  section: "\t"
+  item: "\t"
