@@ -1,4 +1,5 @@
 {
+    "editor.wordWrap": "on",
     "latex-workshop.latex.recipes": [
         {
             "name": "pdflatex 🔃",
@@ -7,5 +8,12 @@
             ]
         }
     ],
-    "latex-workshop.latex.autoBuild.run": "onSave"
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latexindent.args": [
+        "-c",
+        "%DIR%/",
+        "%TMPFILE%",
+        // "-y=\"indentRules:section:\t\"",
+        "-l=%WORKSPACE_FOLDER%/.latexindent.yaml"
+    ]
 }
